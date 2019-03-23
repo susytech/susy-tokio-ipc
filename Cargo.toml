@@ -1,0 +1,25 @@
+[package]
+name = "susy-tokio-ipc"
+version = "0.1.0"
+authors = ["NikVolf <nikvolf@gmail.com>"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/susytech/susy-tokio-ipc"
+homepage = "https://github.com/susytech/susy-tokio-ipc"
+description = """
+Interprocess communication library for tokio.
+"""
+
+[dependencies]
+tokio-uds = "0.2"
+tokio-named-pipes = "0.1"
+futures = "0.1"
+tokio = "0.1"
+rand = "0.3"
+mio-named-pipes = "0.1"
+miow = "~0.3.2"
+log = "0.4"
+bytes = "0.4"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["winbase", "winnt", "accctrl", "aclapi", "securitybaseapi", "minwinbase", "winbase"] }
